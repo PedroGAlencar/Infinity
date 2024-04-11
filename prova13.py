@@ -2,12 +2,12 @@ from tkinter import *
 
 def converter_centi_pra_metros():
     valor = entry_centimetros.get()
-    if valor.isdigit():
-        centi = float(valor)
-        metros = centi / 100
-        metros = float(metros)
-        label_metros.config(text=f'Conversão: {metros  } metros')
-    return 'Valor inválido. Por favor, insira um número'
+    if not valor.isdigit():
+        label_metros.config(text='Não é um número! Tente novamente')
+    centi = float(valor)
+    metros = centi / 100
+    label_metros.config(text=f'Conversão: {metros  } metros')
+    
 
 
 
